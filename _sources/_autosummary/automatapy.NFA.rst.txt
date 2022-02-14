@@ -16,6 +16,7 @@
       ~NFA.__init__
       ~NFA.accepts
       ~NFA.add_state
+      ~NFA.add_transition
       ~NFA.get_states
       ~NFA.get_transitions
       ~NFA.set_final
