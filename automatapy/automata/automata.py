@@ -1,12 +1,13 @@
-from automatapy.automata.engine import Engine, NondeterministicEngine, DeterministicEngine
+from automatapy.automata.engine import Engine, NondeterministicEngine
 from typing import Collection, Sequence, Hashable
-from automatapy.automata.core import State, Transition
+from automatapy.automata.core import State, Transition, TransitionSystem
 import abc
 
 
 class FiniteAutomaton:
 
-    def __init__(self, engine: Engine):
+    def __init__(self, ts: TransitionSystem = None, engine: Engine = None):
+        self.ts: TransitionSystem = ts if ts is not None else TransitionSystem()
         self.engine: Engine = engine
 
     def get_states(self) -> Collection[State]:
@@ -18,7 +19,7 @@ class FiniteAutomaton:
         Set[State]
 
         """
-        return self.engine.get_states()
+        return self.ts.states
 
     def get_transitions(self) -> Collection[Transition]:
         """
@@ -29,7 +30,7 @@ class FiniteAutomaton:
         Set[Transition]
 
         """
-        return self.engine.get_transitions()
+        return self.ts.transitions
 
     def add_state(self, name=None, properties=None, initial=False, final=False):
         """
@@ -52,7 +53,7 @@ class FiniteAutomaton:
             A newly created state
 
         """
-        return self.engine.add_state(name=name, properties=properties, initial=initial, final=final)
+        return self.ts.add_state(name=name, properties=properties, initial=initial, final=final)
 
     def set_final(self, state: State):
         """
@@ -67,10 +68,10 @@ class FiniteAutomaton:
         -------
 
         """
-        self.engine.set_final(state)
+        self.ts.set_final(state)
 
     def add_transition(self, source: State, letter: Hashable, target: State):
-        return self.engine.add_transition(source, letter, target)
+        return self.ts.add_transition(source, letter, target)
 
 
 class EpsilonNFA(FiniteAutomaton):
@@ -81,7 +82,8 @@ class NFA(FiniteAutomaton):
     """Nondeterministic finite automaton implementation"""
 
     def __init__(self):
-        super().__init__(NondeterministicEngine())
+        super().__init__(engine=NondeterministicEngine())
+        self.engine.set_transition_system(self.ts)
 
     def accepts(self, sequence: Sequence):
         """
@@ -103,4 +105,4 @@ class NFA(FiniteAutomaton):
 class DFA(FiniteAutomaton):
 
     def __init__(self):
-        super().__init__(DeterministicEngine())
+        pass

@@ -1,4 +1,4 @@
-from typing import Hashable, Set, Dict, List
+from typing import Hashable, Set, Dict, List, Union
 
 from automatapy.utils import SingletonMetaclass
 
@@ -55,10 +55,11 @@ class TransitionSystem:
     def __init__(self):
         self.states: Set[State] = set()
         self.transitions: Set[Transition] = set()
-        self.state_to_transitions: Dict[State, Set[Transition]]= dict()
+        self.state_to_action_succ: Dict[State, Dict[Hashable, Set[State]]] = dict()
         self.state_id: int = -1
         self.alphabet: Set[Hashable] = set()
-        self.initial_states = set()
+        self.initial_states: Set[State] = set()
+        self.final_states: Set[State] = set()
 
     def add_state(self, name=None, properties=None, initial=False, final=False) -> State:
         """
@@ -83,7 +84,7 @@ class TransitionSystem:
         state = State(self.state_id, name=name, properties=properties)
         self.states.add(state)
         if initial:
-            self.add_initial_state(state)
+            self.set_initial(state)
         if final:
             self.final_states.add(state)
         return state
@@ -109,7 +110,8 @@ class TransitionSystem:
         """
         transition = Transition(source, letter, target)
         self.transitions.add(transition)
-        self.state_to_transitions.setdefault(source, set()).add(transition)
+        action_succ = self.state_to_action_succ.setdefault(source, dict())
+        action_succ.setdefault(letter, set()).add(target)
         return transition
 
     def set_initial(self, state: State):
@@ -157,4 +159,24 @@ class TransitionSystem:
             Set of letters enabled in the given state
 
         """
-        return set([transition.letter for transition in self.state_to_transitions.get(state, [])])
+        return set(self.state_to_action_succ.get(state, dict()).keys())
+
+    def get_successor(self, source: Union[State, Set[State]], letter: Hashable) -> Set[State]:
+        """
+        Returns the set of successor state for a state or set of states and letter
+
+        Parameters
+        ----------
+        source : Union[State, Set[State]]
+            State or set of states
+        letter : Hashable
+            Letter
+
+        Returns
+        -------
+        Set[State]
+            Set of states that can be reached from source via the given letter
+        """
+        if isinstance(source, State):
+            source = set([source])
+        return set(succ for state in source for succ in self.state_to_action_succ.get(state, dict()).get(letter, set()))

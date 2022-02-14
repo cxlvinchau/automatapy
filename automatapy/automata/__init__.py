@@ -1,1 +1,1 @@
-from automatapy.automata.regular_automata import NFA
+from automatapy.automata.automata import NFA
