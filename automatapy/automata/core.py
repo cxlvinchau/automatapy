@@ -109,6 +109,7 @@ class TransitionSystem:
 
         """
         transition = Transition(source, letter, target)
+        self.alphabet.add(letter)
         self.transitions.add(transition)
         action_succ = self.state_to_action_succ.setdefault(source, dict())
         action_succ.setdefault(letter, set()).add(target)
@@ -180,3 +181,32 @@ class TransitionSystem:
         if isinstance(source, State):
             source = set([source])
         return set(succ for state in source for succ in self.state_to_action_succ.get(state, dict()).get(letter, set()))
+
+    def to_dot(self, properties=None):
+        """
+        Returns a graphviz string representation of the transition system
+
+        Parameters
+        ----------
+        properties:
+            Properties the states should be labeled with
+
+        Returns
+        -------
+        str
+            String in dot format
+        """
+        s = "digraph{"
+        for state in self.states:
+            label = state.state_id if state.name is None else state.name
+            if properties is not None:
+                for property in properties:
+                    label += f"\n{property}: {str(state.properties[property])}"
+            shape = "doublecircle" if state in self.final_states else "circle"
+            s += f"\n{state.state_id} [label=\"{label}\", shape={shape}]"
+            if state in self.initial_states:
+                s += f"\n{-(state.state_id+1)} [label=\"\", shape=none, height=.0, width=.0]"
+                s += f"\n{-(state.state_id+1)} -> {state.state_id}"
+        for transition in self.transitions:
+            s += f"\n{transition.source.state_id} -> {transition.target.state_id} [label={transition.letter}]"
+        return s + "}"

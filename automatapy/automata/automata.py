@@ -6,7 +6,7 @@ import abc
 
 class FiniteAutomaton:
 
-    def __init__(self, ts: TransitionSystem = None, engine: Engine = None):
+    def __init__(self, engine: Engine, ts: TransitionSystem = None):
         self.ts: TransitionSystem = ts if ts is not None else TransitionSystem()
         self.engine: Engine = engine
 
@@ -81,8 +81,8 @@ class EpsilonNFA(FiniteAutomaton):
 class NFA(FiniteAutomaton):
     """Nondeterministic finite automaton implementation"""
 
-    def __init__(self):
-        super().__init__(engine=NondeterministicEngine())
+    def __init__(self, **kwargs):
+        super().__init__(NondeterministicEngine(), **kwargs)
         self.engine.set_transition_system(self.ts)
 
     def accepts(self, sequence: Sequence):
@@ -101,8 +101,29 @@ class NFA(FiniteAutomaton):
         """
         return self.engine.accepts(sequence)
 
+    def determinize(self, alphabet=None):
+        """
+        Determinizes the nondeterministic finite automaton with the powerset construction
+
+        Parameters
+        ----------
+        alphabet: Set[Hashable]
+            Optional argument. Powerset construction is constructed w.r.t. to the alphabet. If None, then the construction
+            is done with the alphabet of the NFA
+
+        Returns
+        -------
+        DFA
+            Deterministic finite automaton
+
+        """
+        ts = self.engine.determinize(alphabet)
+        return DFA(ts=ts)
+
 
 class DFA(FiniteAutomaton):
 
-    def __init__(self):
+    def __init__(self, **kwargs):
+        super().__init__(NondeterministicEngine(), **kwargs)
+        self.engine.set_transition_system(self.ts)
         pass
