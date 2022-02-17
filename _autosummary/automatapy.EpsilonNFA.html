@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="automatapy.EpsilonNFA" href="automatapy.EpsilonNFA.html" /><link rel="prev" title="Modules" href="../modules.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="prev" title="automatapy.NFA" href="automatapy.NFA.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.01.02"/>
-        <title>automatapy.NFA - automatapy documentation</title>
+        <title>automatapy.EpsilonNFA - automatapy documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -159,8 +159,8 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children"><a class="reference internal" href="../modules.html">Modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
-<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">automatapy.NFA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="automatapy.EpsilonNFA.html">automatapy.EpsilonNFA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="automatapy.NFA.html">automatapy.NFA</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">automatapy.EpsilonNFA</a></li>
 </ul>
 </li>
 </ul>
@@ -189,15 +189,15 @@
           </label>
         </div>
         <article role="main">
-          <section id="automatapy-nfa">
-<h1>automatapy.NFA<a class="headerlink" href="#automatapy-nfa" title="Permalink to this headline">¶</a></h1>
+          <section id="automatapy-epsilonnfa">
+<h1>automatapy.EpsilonNFA<a class="headerlink" href="#automatapy-epsilonnfa" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt class="sig sig-object py" id="automatapy.NFA">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">automatapy.</span></span><span class="sig-name descname"><span class="pre">NFA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA" title="Permalink to this definition">¶</a></dt>
-<dd><p>Nondeterministic finite automaton implementation</p>
+<dt class="sig sig-object py" id="automatapy.EpsilonNFA">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">automatapy.</span></span><span class="sig-name descname"><span class="pre">EpsilonNFA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.EpsilonNFA" title="Permalink to this definition">¶</a></dt>
+<dd><p>Epsilon nondeterministic finite automaton implementation</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="automatapy.NFA.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.__init__" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="automatapy.EpsilonNFA.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.EpsilonNFA.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <p class="rubric">Methods</p>
 <div class="table-wrapper"><table class="longtable docutils align-default">
@@ -206,65 +206,45 @@
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.__init__" title="automatapy.NFA.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(**kwargs)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.EpsilonNFA.__init__" title="automatapy.EpsilonNFA.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(**kwargs)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.accepts" title="automatapy.NFA.accepts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accepts</span></code></a>(sequence)</p></td>
-<td><p>Checks whether the automaton accepts the given sequence</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.add_state" title="automatapy.NFA.add_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_state</span></code></a>([name, properties, initial, final])</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.EpsilonNFA.add_state" title="automatapy.EpsilonNFA.add_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_state</span></code></a>([name, properties, initial, final])</p></td>
 <td><p>Adds a state to the automaton</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.add_transition" title="automatapy.NFA.add_transition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_transition</span></code></a>(source, letter, target)</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.EpsilonNFA.add_transition" title="automatapy.EpsilonNFA.add_transition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_transition</span></code></a>(source, letter, target)</p></td>
 <td><p>Adds a transition to the automaton</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.determinize" title="automatapy.NFA.determinize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">determinize</span></code></a>([alphabet])</p></td>
-<td><p>Determinizes the nondeterministic finite automaton with the powerset construction</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.get_states" title="automatapy.NFA.get_states"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_states</span></code></a>()</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.EpsilonNFA.get_states" title="automatapy.EpsilonNFA.get_states"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_states</span></code></a>()</p></td>
 <td><p>Returns the states of the automaton</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.get_transitions" title="automatapy.NFA.get_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_transitions</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.EpsilonNFA.get_transitions" title="automatapy.EpsilonNFA.get_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_transitions</span></code></a>()</p></td>
 <td><p>Returns the transitions of the automaton</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.set_final" title="automatapy.NFA.set_final"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_final</span></code></a>(state)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.EpsilonNFA.set_final" title="automatapy.EpsilonNFA.set_final"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_final</span></code></a>(state)</p></td>
 <td><p>Makes the given state final</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.EpsilonNFA.to_nfa" title="automatapy.EpsilonNFA.to_nfa"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_nfa</span></code></a>()</p></td>
+<td><p>Converts the epsilon NFA to an NFA</p></td>
 </tr>
 </tbody>
 </table></div>
 <dl class="py method">
-<dt class="sig sig-object py" id="automatapy.NFA.accepts">
-<span class="sig-name descname"><span class="pre">accepts</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">sequence</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Sequence</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.accepts" title="Permalink to this definition">¶</a></dt>
-<dd><p>Checks whether the automaton accepts the given sequence</p>
+<dt class="sig sig-object py" id="automatapy.EpsilonNFA.to_nfa">
+<span class="sig-name descname"><span class="pre">to_nfa</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.EpsilonNFA.to_nfa" title="Permalink to this definition">¶</a></dt>
+<dd><p>Converts the epsilon NFA to an NFA</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>sequence</strong> (<em>Sequence</em>) – Sequence to be checked</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Nondeterministic finite automaton</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>bool</p>
+<dd class="field-even"><p><a class="reference internal" href="automatapy.NFA.html#automatapy.NFA" title="automatapy.NFA">NFA</a></p>
 </dd>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="automatapy.NFA.determinize">
-<span class="sig-name descname"><span class="pre">determinize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alphabet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.determinize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Determinizes the nondeterministic finite automaton with the powerset construction</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>alphabet</strong> (<em>Set</em><em>[</em><em>Hashable</em><em>]</em>) – Optional argument. Powerset construction is constructed w.r.t. to the alphabet. If None, then the construction
-is done with the alphabet of the NFA</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Deterministic finite automaton</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>DFA</p>
-</dd>
-</dl>
-</dd></dl>
-<dl class="py method">
-<dt class="sig sig-object py" id="automatapy.NFA.add_state">
-<span class="sig-name descname"><span class="pre">add_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.add_state" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="automatapy.EpsilonNFA.add_state">
+<span class="sig-name descname"><span class="pre">add_state</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">properties</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">final</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.EpsilonNFA.add_state" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a state to the automaton</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -284,8 +264,8 @@ is done with the alphabet of the NFA</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="automatapy.NFA.add_transition">
-<span class="sig-name descname"><span class="pre">add_transition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">automatapy.automata.core.State</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">automatapy.automata.core.State</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.add_transition" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="automatapy.EpsilonNFA.add_transition">
+<span class="sig-name descname"><span class="pre">add_transition</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">source</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">automatapy.automata.core.State</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">letter</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">Hashable</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">automatapy.automata.core.State</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.EpsilonNFA.add_transition" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a transition to the automaton</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -304,8 +284,8 @@ is done with the alphabet of the NFA</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="automatapy.NFA.get_states">
-<span class="sig-name descname"><span class="pre">get_states</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">automatapy.automata.core.State</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#automatapy.NFA.get_states" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="automatapy.EpsilonNFA.get_states">
+<span class="sig-name descname"><span class="pre">get_states</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">automatapy.automata.core.State</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#automatapy.EpsilonNFA.get_states" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the states of the automaton</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -314,8 +294,8 @@ is done with the alphabet of the NFA</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="automatapy.NFA.get_transitions">
-<span class="sig-name descname"><span class="pre">get_transitions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">automatapy.automata.core.Transition</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#automatapy.NFA.get_transitions" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="automatapy.EpsilonNFA.get_transitions">
+<span class="sig-name descname"><span class="pre">get_transitions</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">→</span> <span class="sig-return-typehint"><span class="pre">Collection</span><span class="p"><span class="pre">[</span></span><span class="pre">automatapy.automata.core.Transition</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#automatapy.EpsilonNFA.get_transitions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the transitions of the automaton</p>
 <dl class="field-list simple">
 <dt class="field-odd">Return type</dt>
@@ -324,8 +304,8 @@ is done with the alphabet of the NFA</p>
 </dl>
 </dd></dl>
 <dl class="py method">
-<dt class="sig sig-object py" id="automatapy.NFA.set_final">
-<span class="sig-name descname"><span class="pre">set_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">automatapy.automata.core.State</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.set_final" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="automatapy.EpsilonNFA.set_final">
+<span class="sig-name descname"><span class="pre">set_final</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">state</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">automatapy.automata.core.State</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.EpsilonNFA.set_final" title="Permalink to this definition">¶</a></dt>
 <dd><p>Makes the given state final</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -341,23 +321,15 @@ is done with the alphabet of the NFA</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="automatapy.EpsilonNFA.html">
-              <div class="page-info">
-                <div class="context">
-                  <span>Next</span>
-                </div>
-                <div class="title">automatapy.EpsilonNFA</div>
-              </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
-            </a>
-          <a class="prev-page" href="../modules.html">
+          
+          <a class="prev-page" href="automatapy.NFA.html">
               <svg><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
                 </div>
                 
-                <div class="title">Modules</div>
+                <div class="title">automatapy.NFA</div>
                 
               </div>
             </a>
@@ -367,7 +339,7 @@ is done with the alphabet of the NFA</p>
               Copyright &#169; 2022, Calvin Chau |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/_autosummary/automatapy.NFA.rst.txt"
+            | <a class="muted-link" href="../_sources/_autosummary/automatapy.EpsilonNFA.rst.txt"
                rel="nofollow">
               Show Source
             </a>
