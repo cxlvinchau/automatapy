@@ -17,6 +17,7 @@
       ~NFA.accepts
       ~NFA.add_state
       ~NFA.add_transition
+      ~NFA.determinize
       ~NFA.get_states
       ~NFA.get_transitions
       ~NFA.set_final

@@ -192,11 +192,11 @@
 <h1>automatapy.NFA<a class="headerlink" href="#automatapy-nfa" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="automatapy.NFA">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">automatapy.</span></span><span class="sig-name descname"><span class="pre">NFA</span></span><a class="headerlink" href="#automatapy.NFA" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">automatapy.</span></span><span class="sig-name descname"><span class="pre">NFA</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA" title="Permalink to this definition">¶</a></dt>
 <dd><p>Nondeterministic finite automaton implementation</p>
 <dl class="py method">
 <dt class="sig sig-object py" id="automatapy.NFA.__init__">
-<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.__init__" title="Permalink to this definition">¶</a></dt>
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.__init__" title="Permalink to this definition">¶</a></dt>
 <dd></dd></dl>
 <p class="rubric">Methods</p>
 <div class="table-wrapper"><table class="longtable docutils align-default">
@@ -205,7 +205,7 @@
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.__init__" title="automatapy.NFA.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.__init__" title="automatapy.NFA.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(**kwargs)</p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.accepts" title="automatapy.NFA.accepts"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accepts</span></code></a>(sequence)</p></td>
@@ -217,13 +217,16 @@
 <tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.add_transition" title="automatapy.NFA.add_transition"><code class="xref py py-obj docutils literal notranslate"><span class="pre">add_transition</span></code></a>(source, letter, target)</p></td>
 <td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.get_states" title="automatapy.NFA.get_states"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_states</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.determinize" title="automatapy.NFA.determinize"><code class="xref py py-obj docutils literal notranslate"><span class="pre">determinize</span></code></a>([alphabet])</p></td>
+<td><p>Determinizes the nondeterministic finite automaton with the powerset construction</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.get_states" title="automatapy.NFA.get_states"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_states</span></code></a>()</p></td>
 <td><p>Returns the states of the automaton</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.get_transitions" title="automatapy.NFA.get_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_transitions</span></code></a>()</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.get_transitions" title="automatapy.NFA.get_transitions"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_transitions</span></code></a>()</p></td>
 <td><p>Returns the transitions of the automaton</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.NFA.set_final" title="automatapy.NFA.set_final"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_final</span></code></a>(state)</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.NFA.set_final" title="automatapy.NFA.set_final"><code class="xref py py-obj docutils literal notranslate"><span class="pre">set_final</span></code></a>(state)</p></td>
 <td><p>Makes the given state final</p></td>
 </tr>
 </tbody>
@@ -238,6 +241,23 @@
 </dd>
 <dt class="field-even">Return type</dt>
 <dd class="field-even"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+<dl class="py method">
+<dt class="sig sig-object py" id="automatapy.NFA.determinize">
+<span class="sig-name descname"><span class="pre">determinize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">alphabet</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.NFA.determinize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Determinizes the nondeterministic finite automaton with the powerset construction</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>alphabet</strong> (<em>Set</em><em>[</em><em>Hashable</em><em>]</em>) – Optional argument. Powerset construction is constructed w.r.t. to the alphabet. If None, then the construction
+is done with the alphabet of the NFA</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Deterministic finite automaton</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>DFA</p>
 </dd>
 </dl>
 </dd></dl>
