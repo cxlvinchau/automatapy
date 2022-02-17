@@ -1,1 +1,1 @@
-from automatapy.automata import NFA
+from automatapy.automata import NFA, EpsilonNFA, Epsilon

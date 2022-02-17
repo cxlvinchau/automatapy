@@ -19,41 +19,65 @@ class Engine:
 class EpsilonEngine(Engine):
 
     def remove_epsilon(self) -> TransitionSystem:
+        """
+        Removes the epsilon transitions from a transition system. The resulting transition system does not contain any
+        epsilon transitions
+
+        Returns
+        -------
+        TransitionSystem
+            Transition system without epsilon transitions
+
+        """
+        # Add transitions from initial states to worklist
         worklist = []
         for state in self.ts.initial_states:
             for letter in self.ts.enabled_letters(state):
                 for target in self.ts.get_successor(state, letter):
                     worklist.append(Transition(state, letter, target))
         ts = TransitionSystem()
-        state_dict = dict()
+        state_dict: Dict[State, State] = dict()
+        # Add initial states to visited dictionary
         for state in self.ts.initial_states:
             state_dict[state] = ts.add_state(initial=True)
             if state in self.ts.final_states:
                 ts.set_final(state_dict[state])
+        # delta contains non-epsilon transitions, epsilon_delta contains epsilon transitions
         delta, epsilon_delta = set(), set()
         while worklist:
             t = worklist.pop()
+            # Create new state if it has not been visited before
             if t.target not in state_dict:
-                state_dict[t.source] = ts.add_state()
-                if t.source in self.ts.initial_states:
-                    ts.set_initial(state_dict[t.source])
-                if t.source in self.ts.final_states:
-                    ts.set_final(state_dict[t.source])
-            if isinstance(t.letter, Epsilon):
+                state_dict[t.target] = ts.add_state()
+                if t.target in self.ts.final_states:
+                    ts.set_final(state_dict[t.target])
+            # Check whether the transition is an epsilon transition
+            if t.letter == Epsilon():
+                # Epsilon case
                 epsilon_delta.add(t)
+                if state_dict[t.target] in ts.final_states:
+                    ts.set_final(state_dict[t.source])
                 for letter in self.ts.enabled_letters(t.target):
-                    if isinstance(letter, Epsilon):
-                        for target in self.ts.get_successor(t.target, letter):
-                            t1 = Transition(t.source, Epsilon, target)
-                            if t1 not in epsilon_delta:
-                                worklist.append(t1)
-                    else:
-                        for target in self.ts.get_successor(t.target, letter):
-                            t1 = Transition(t.source, letter, target)
-                            if t1 not in delta:
-                                worklist.append(t1)
+                    for target in self.ts.get_successor(t.target, letter):
+                        t1 = Transition(t.source, letter, target)
+                        if t1 not in delta and t1 not in epsilon_delta:
+                            worklist.append(t1)
             else:
-                pass
+                delta.add(t)
+                # Add to transition system
+                ts.add_transition(state_dict[t.source], t.letter, state_dict[t.target])
+                # Iterate over epsilon successors of target
+                for target in self.ts.get_successor(t.target, Epsilon()):
+                    t1 = Transition(t.source, Epsilon(), target)
+                    if t1 not in epsilon_delta:
+                        worklist.append(t1)
+                for letter in self.ts.enabled_letters(t.target, ignore_epsilon=True):
+                    for target in self.ts.get_successor(t.target, letter):
+                        t1 = Transition(t.target, letter, target)
+                        if t1 not in delta:
+                            worklist.append(t1)
+        return ts
+
 
 class NondeterministicEngine(Engine):
     """Nondeterministic engine implementation"""
@@ -106,4 +130,3 @@ class NondeterministicEngine(Engine):
                     set_to_state[succ] = state
                 ts.add_transition(current, letter, set_to_state[succ])
         return ts
-

@@ -9,3 +9,4 @@ Modules
    :recursive:
 
    automatapy.NFA
+   automatapy.EpsilonNFA

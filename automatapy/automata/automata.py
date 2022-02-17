@@ -1,4 +1,4 @@
-from automatapy.automata.engine import Engine, NondeterministicEngine
+from automatapy.automata.engine import Engine, NondeterministicEngine, EpsilonEngine
 from typing import Collection, Sequence, Hashable
 from automatapy.automata.core import State, Transition, TransitionSystem
 import abc
@@ -71,11 +71,45 @@ class FiniteAutomaton:
         self.ts.set_final(state)
 
     def add_transition(self, source: State, letter: Hashable, target: State):
+        """
+        Adds a transition to the automaton
+
+        Parameters
+        ----------
+        source: State
+            Source of the transition
+        letter: Hashable
+            Letter to be read
+        target: State
+            Target of the transition
+
+        Returns
+        -------
+        Transition
+            The specified transition
+        """
         return self.ts.add_transition(source, letter, target)
 
 
 class EpsilonNFA(FiniteAutomaton):
-    pass
+    """Epsilon nondeterministic finite automaton implementation"""
+
+    def __init__(self, **kwargs):
+        super().__init__(EpsilonEngine(), **kwargs)
+        self.engine.set_transition_system(self.ts)
+
+    def to_nfa(self):
+        """
+        Converts the epsilon NFA to an NFA
+
+        Returns
+        -------
+        NFA
+            Nondeterministic finite automaton
+
+        """
+        ts = self.engine.remove_epsilon()
+        return NFA(ts=ts)
 
 
 class NFA(FiniteAutomaton):

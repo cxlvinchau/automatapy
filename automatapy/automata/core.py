@@ -28,10 +28,16 @@ class State:
 class Epsilon(metaclass=SingletonMetaclass):
 
     def __eq__(self, other):
-        return isinstance(Epsilon)
+        return isinstance(other, Epsilon)
 
     def __hash__(self):
         return hash("epsilon")
+
+    def __repr__(self):
+        return "Epsilon()"
+
+    def __str__(self):
+        return "ε"
 
 
 class Transition:
@@ -48,6 +54,9 @@ class Transition:
 
     def __hash__(self):
         return hash(self.source) + hash(self.letter) + hash(self.target)
+
+    def __str__(self):
+        return f"{str(self.source)} -{str(self.letter)}-> {str(self.target)}"
 
 
 class TransitionSystem:
@@ -109,7 +118,8 @@ class TransitionSystem:
 
         """
         transition = Transition(source, letter, target)
-        self.alphabet.add(letter)
+        if letter != Epsilon():
+            self.alphabet.add(letter)
         self.transitions.add(transition)
         action_succ = self.state_to_action_succ.setdefault(source, dict())
         action_succ.setdefault(letter, set()).add(target)
@@ -145,7 +155,7 @@ class TransitionSystem:
         """
         self.final_states.add(state)
 
-    def enabled_letters(self, state: State) -> Set[Hashable]:
+    def enabled_letters(self, state: State, ignore_epsilon=False) -> Set[Hashable]:
         """
         Returns the letters enabled in the given state
 
@@ -153,6 +163,8 @@ class TransitionSystem:
         ----------
         state : State
             State
+        ignore_epsilon: bool
+            If true, then epsilon will not be returned
 
         Returns
         -------
@@ -160,6 +172,8 @@ class TransitionSystem:
             Set of letters enabled in the given state
 
         """
+        if ignore_epsilon:
+            return set([letter for letter in self.state_to_action_succ.get(state, dict()).keys() if letter != Epsilon()])
         return set(self.state_to_action_succ.get(state, dict()).keys())
 
     def get_successor(self, source: Union[State, Set[State]], letter: Hashable) -> Set[State]:
@@ -205,8 +219,8 @@ class TransitionSystem:
             shape = "doublecircle" if state in self.final_states else "circle"
             s += f"\n{state.state_id} [label=\"{label}\", shape={shape}]"
             if state in self.initial_states:
-                s += f"\n{-(state.state_id+1)} [label=\"\", shape=none, height=.0, width=.0]"
-                s += f"\n{-(state.state_id+1)} -> {state.state_id}"
+                s += f"\n{-(state.state_id + 1)} [label=\"\", shape=none, height=.0, width=.0]"
+                s += f"\n{-(state.state_id + 1)} -> {state.state_id}"
         for transition in self.transitions:
             s += f"\n{transition.source.state_id} -> {transition.target.state_id} [label={transition.letter}]"
         return s + "}"
