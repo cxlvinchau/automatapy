@@ -1,0 +1,23 @@
+﻿automatapy.regex.KleeneStar
+===========================
+
+.. currentmodule:: automatapy.regex
+
+.. autoclass:: KleeneStar
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~KleeneStar.__init__
+      ~KleeneStar.accept
+   
+   
+
+   
+   
+   

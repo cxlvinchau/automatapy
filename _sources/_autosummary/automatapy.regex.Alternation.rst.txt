@@ -1,0 +1,23 @@
+﻿automatapy.regex.Alternation
+============================
+
+.. currentmodule:: automatapy.regex
+
+.. autoclass:: Alternation
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Alternation.__init__
+      ~Alternation.accept
+   
+   
+
+   
+   
+   

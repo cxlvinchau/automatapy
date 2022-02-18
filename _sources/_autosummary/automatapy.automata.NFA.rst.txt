@@ -1,7 +1,7 @@
-﻿automatapy.NFA
-==============
+﻿automatapy.automata.NFA
+=======================
 
-.. currentmodule:: automatapy
+.. currentmodule:: automatapy.automata
 
 .. autoclass:: NFA
 
@@ -16,6 +16,10 @@
       ~NFA.__init__
       ~NFA.accepts
       ~NFA.add_state
+      ~NFA.add_transition
+      ~NFA.determinize
+      ~NFA.get_final_states
+      ~NFA.get_initial_states
       ~NFA.get_states
       ~NFA.get_transitions
       ~NFA.set_final

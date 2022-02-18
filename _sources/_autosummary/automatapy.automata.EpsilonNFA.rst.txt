@@ -1,0 +1,30 @@
+﻿automatapy.automata.EpsilonNFA
+==============================
+
+.. currentmodule:: automatapy.automata
+
+.. autoclass:: EpsilonNFA
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~EpsilonNFA.__init__
+      ~EpsilonNFA.add_state
+      ~EpsilonNFA.add_transition
+      ~EpsilonNFA.get_final_states
+      ~EpsilonNFA.get_initial_states
+      ~EpsilonNFA.get_states
+      ~EpsilonNFA.get_transitions
+      ~EpsilonNFA.set_final
+      ~EpsilonNFA.to_nfa
+   
+   
+
+   
+   
+   

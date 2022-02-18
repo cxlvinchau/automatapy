@@ -3,10 +3,10 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="automatapy.regex.Alternation" href="automatapy.regex.Alternation.html" /><link rel="prev" title="automatapy.automata.NFA" href="automatapy.automata.NFA.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.01.02"/>
-        <title>automatapy.NFA - automatapy documentation</title>
+        <title>automatapy.regex.Letter - automatapy documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?digest=df49af52631e7917044a9c21a57f7b83170a6dd0" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?digest=fade93df149f7c5fedb3ff897f799dc7d283b420" />
@@ -157,11 +157,11 @@
 </form>
 <div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
-<ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../modules.html">Modules</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="../modules.html">Modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="automatapy.automata.EpsilonNFA.html">automatapy.automata.EpsilonNFA</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automatapy.automata.NFA.html">automatapy.automata.NFA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="automatapy.regex.Letter.html">automatapy.regex.Letter</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">automatapy.regex.Letter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automatapy.regex.Alternation.html">automatapy.regex.Alternation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automatapy.regex.KleeneStar.html">automatapy.regex.KleeneStar</a></li>
 <li class="toctree-l2"><a class="reference internal" href="automatapy.regex.Concatenation.html">automatapy.regex.Concatenation</a></li>
@@ -193,8 +193,35 @@
           </label>
         </div>
         <article role="main">
-          <section id="automatapy-nfa">
-<h1>automatapy.NFA<a class="headerlink" href="#automatapy-nfa" title="Permalink to this headline">¶</a></h1>
+          <section id="automatapy-regex-letter">
+<h1>automatapy.regex.Letter<a class="headerlink" href="#automatapy-regex-letter" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt class="sig sig-object py" id="automatapy.regex.Letter">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">automatapy.regex.</span></span><span class="sig-name descname"><span class="pre">Letter</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">letter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.regex.Letter" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="py method">
+<dt class="sig sig-object py" id="automatapy.regex.Letter.__init__">
+<span class="sig-name descname"><span class="pre">__init__</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">letter</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.regex.Letter.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+<p class="rubric">Methods</p>
+<div class="table-wrapper"><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#automatapy.regex.Letter.__init__" title="automatapy.regex.Letter.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(letter)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#automatapy.regex.Letter.accept" title="automatapy.regex.Letter.accept"><code class="xref py py-obj docutils literal notranslate"><span class="pre">accept</span></code></a>(regex_visitor)</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table></div>
+<dl class="py method">
+<dt class="sig sig-object py" id="automatapy.regex.Letter.accept">
+<span class="sig-name descname"><span class="pre">accept</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">regex_visitor</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">automatapy.regex.RegexVisitor</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#automatapy.regex.Letter.accept" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+</dd></dl>
 </section>
 
         </article>
@@ -202,15 +229,33 @@
       <footer>
         
         <div class="related-pages">
-          
-          
+          <a class="next-page" href="automatapy.regex.Alternation.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">automatapy.regex.Alternation</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="automatapy.automata.NFA.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">automatapy.automata.NFA</div>
+                
+              </div>
+            </a>
         </div>
 
         <div class="related-information">
               Copyright &#169; 2022, Calvin Chau |
           Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
           <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
-            | <a class="muted-link" href="../_sources/_autosummary/automatapy.NFA.rst.txt"
+            | <a class="muted-link" href="../_sources/_autosummary/automatapy.regex.Letter.rst.txt"
                rel="nofollow">
               Show Source
             </a>

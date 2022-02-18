@@ -1,0 +1,23 @@
+﻿automatapy.regex.Concatenation
+==============================
+
+.. currentmodule:: automatapy.regex
+
+.. autoclass:: Concatenation
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~Concatenation.__init__
+      ~Concatenation.accept
+   
+   
+
+   
+   
+   

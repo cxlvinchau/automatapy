@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="automatapy.NFA" href="_autosummary/automatapy.NFA.html" /><link rel="prev" title="automatapy Documentation" href="index.html" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="automatapy.automata.EpsilonNFA" href="_autosummary/automatapy.automata.EpsilonNFA.html" /><link rel="prev" title="automatapy Documentation" href="index.html" />
 
     <meta name="generator" content="sphinx-4.4.0, furo 2022.01.02"/>
         <title>Modules - automatapy documentation</title>
@@ -134,7 +134,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -159,8 +159,12 @@
   <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
 <li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">Modules</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="_autosummary/automatapy.NFA.html">automatapy.NFA</a></li>
-<li class="toctree-l2"><a class="reference internal" href="_autosummary/automatapy.EpsilonNFA.html">automatapy.EpsilonNFA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/automatapy.automata.EpsilonNFA.html">automatapy.automata.EpsilonNFA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/automatapy.automata.NFA.html">automatapy.automata.NFA</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/automatapy.regex.Letter.html">automatapy.regex.Letter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/automatapy.regex.Alternation.html">automatapy.regex.Alternation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/automatapy.regex.KleeneStar.html">automatapy.regex.KleeneStar</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/automatapy.regex.Concatenation.html">automatapy.regex.Concatenation</a></li>
 </ul>
 </li>
 </ul>
@@ -183,7 +187,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -191,20 +195,46 @@
         <article role="main">
           <section id="modules">
 <h1>Modules<a class="headerlink" href="#modules" title="Permalink to this headline">¶</a></h1>
+<section id="automata-module">
+<h2>automata Module<a class="headerlink" href="#automata-module" title="Permalink to this headline">¶</a></h2>
 <div class="table-wrapper"><table class="longtable docutils align-default">
 <colgroup>
 <col style="width: 10%"/>
 <col style="width: 90%"/>
 </colgroup>
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/automatapy.NFA.html#automatapy.NFA" title="automatapy.NFA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automatapy.NFA</span></code></a></p></td>
-<td><p>Nondeterministic finite automaton implementation</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/automatapy.EpsilonNFA.html#automatapy.EpsilonNFA" title="automatapy.EpsilonNFA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automatapy.EpsilonNFA</span></code></a></p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/automatapy.automata.EpsilonNFA.html#automatapy.automata.EpsilonNFA" title="automatapy.automata.EpsilonNFA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automatapy.automata.EpsilonNFA</span></code></a></p></td>
 <td><p>Epsilon nondeterministic finite automaton implementation</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/automatapy.automata.NFA.html#automatapy.automata.NFA" title="automatapy.automata.NFA"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automatapy.automata.NFA</span></code></a></p></td>
+<td><p>Nondeterministic finite automaton implementation</p></td>
 </tr>
 </tbody>
 </table></div>
+</section>
+<section id="regex-module">
+<h2>regex Module<a class="headerlink" href="#regex-module" title="Permalink to this headline">¶</a></h2>
+<div class="table-wrapper"><table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%"/>
+<col style="width: 90%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/automatapy.regex.Letter.html#automatapy.regex.Letter" title="automatapy.regex.Letter"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automatapy.regex.Letter</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/automatapy.regex.Alternation.html#automatapy.regex.Alternation" title="automatapy.regex.Alternation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automatapy.regex.Alternation</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="_autosummary/automatapy.regex.KleeneStar.html#automatapy.regex.KleeneStar" title="automatapy.regex.KleeneStar"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automatapy.regex.KleeneStar</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="_autosummary/automatapy.regex.Concatenation.html#automatapy.regex.Concatenation" title="automatapy.regex.Concatenation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automatapy.regex.Concatenation</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table></div>
+</section>
 </section>
 
         </article>
@@ -212,12 +242,12 @@
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="_autosummary/automatapy.NFA.html">
+          <a class="next-page" href="_autosummary/automatapy.automata.EpsilonNFA.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">automatapy.NFA</div>
+                <div class="title">automatapy.automata.EpsilonNFA</div>
               </div>
               <svg><use href="#svg-arrow-right"></use></svg>
             </a>
@@ -246,8 +276,28 @@
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Modules</a><ul>
+<li><a class="reference internal" href="#automata-module">automata Module</a></li>
+<li><a class="reference internal" href="#regex-module">regex Module</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
