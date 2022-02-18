@@ -59,13 +59,15 @@ class Transition:
         return f"{str(self.source)} -{str(self.letter)}-> {str(self.target)}"
 
 
+STATE_ID = -1
+
+
 class TransitionSystem:
 
     def __init__(self):
         self.states: Set[State] = set()
         self.transitions: Set[Transition] = set()
         self.state_to_action_succ: Dict[State, Dict[Hashable, Set[State]]] = dict()
-        self.state_id: int = -1
         self.alphabet: Set[Hashable] = set()
         self.initial_states: Set[State] = set()
         self.final_states: Set[State] = set()
@@ -89,8 +91,9 @@ class TransitionSystem:
         -------
 
         """
-        self.state_id += 1
-        state = State(self.state_id, name=name, properties=properties)
+        global STATE_ID
+        STATE_ID += 1
+        state = State(STATE_ID, name=name, properties=properties)
         self.states.add(state)
         if initial:
             self.set_initial(state)

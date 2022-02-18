@@ -1,6 +1,6 @@
 import unittest
 
-from automatapy import EpsilonNFA, Epsilon
+from automatapy.automata import EpsilonNFA, Epsilon
 
 
 class EpsilonNFATest(unittest.TestCase):

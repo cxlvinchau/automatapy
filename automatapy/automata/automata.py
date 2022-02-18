@@ -1,5 +1,5 @@
 from automatapy.automata.engine import Engine, NondeterministicEngine, EpsilonEngine
-from typing import Collection, Sequence, Hashable
+from typing import Collection, Sequence, Hashable, Set
 from automatapy.automata.core import State, Transition, TransitionSystem
 import abc
 
@@ -90,6 +90,30 @@ class FiniteAutomaton:
         """
         return self.ts.add_transition(source, letter, target)
 
+    def get_final_states(self) -> Set[State]:
+        """
+        Returns the set of final states
+
+        Returns
+        -------
+        Set[State]
+            Set of final states
+
+        """
+        return self.ts.final_states
+
+    def get_initial_states(self) -> Set[State]:
+        """
+        Returns the set of initial states
+
+        Returns
+        -------
+        Set[State]
+            Set of initial states
+
+        """
+        return self.ts.initial_states
+
 
 class EpsilonNFA(FiniteAutomaton):
     """Epsilon nondeterministic finite automaton implementation"""
@@ -156,6 +180,7 @@ class NFA(FiniteAutomaton):
 
 
 class DFA(FiniteAutomaton):
+    """Deterministic finite automaton implementation"""
 
     def __init__(self, **kwargs):
         super().__init__(NondeterministicEngine(), **kwargs)

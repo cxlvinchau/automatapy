@@ -1,6 +1,6 @@
 import unittest
 
-from automatapy import NFA
+from automatapy.automata import NFA
 
 
 class NFATest(unittest.TestCase):
