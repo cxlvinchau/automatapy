@@ -1,0 +1,29 @@
+﻿automatapy.automata.DFA
+=======================
+
+.. currentmodule:: automatapy.automata
+
+.. autoclass:: DFA
+
+   
+   .. automethod:: __init__
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+   
+      ~DFA.__init__
+      ~DFA.add_state
+      ~DFA.add_transition
+      ~DFA.get_final_states
+      ~DFA.get_initial_states
+      ~DFA.get_states
+      ~DFA.get_transitions
+      ~DFA.set_final
+   
+   
+
+   
+   
+   
