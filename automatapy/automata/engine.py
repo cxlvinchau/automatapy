@@ -46,6 +46,7 @@ class EpsilonEngine(Engine):
         delta, epsilon_delta = set(), set()
         while worklist:
             t = worklist.pop()
+            print(t)
             # Create new state if it has not been visited before
             if t.target not in state_dict:
                 state_dict[t.target] = ts.add_state()
@@ -68,14 +69,16 @@ class EpsilonEngine(Engine):
                 ts.add_transition(state_dict[t.source], t.letter, state_dict[t.target])
                 # Iterate over epsilon successors of target
                 for target in self.ts.get_successor(t.target, Epsilon()):
-                    t1 = Transition(t.source, Epsilon(), target)
-                    if t1 not in epsilon_delta:
+                    t1 = Transition(t.source, t.letter, target)
+                    if t1 not in delta:
                         worklist.append(t1)
                 for letter in self.ts.enabled_letters(t.target, ignore_epsilon=True):
                     for target in self.ts.get_successor(t.target, letter):
                         t1 = Transition(t.target, letter, target)
                         if t1 not in delta:
                             worklist.append(t1)
+        print([str(t) for t in epsilon_delta])
+        print([str(t) for t in delta])
         return ts
 
 

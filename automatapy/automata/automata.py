@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from automatapy.automata.engine import Engine, NondeterministicEngine, EpsilonEngine
 from typing import Collection, Sequence, Hashable, Set
 from automatapy.automata.core import State, Transition, TransitionSystem
@@ -122,7 +124,7 @@ class EpsilonNFA(FiniteAutomaton):
         super().__init__(EpsilonEngine(), **kwargs)
         self.engine.set_transition_system(self.ts)
 
-    def to_nfa(self):
+    def to_nfa(self) -> NFA:
         """
         Converts the epsilon NFA to an NFA
 

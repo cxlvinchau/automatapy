@@ -1,6 +1,6 @@
 from typing import Any
 
-from automatapy import EpsilonNFA, Epsilon
+from automatapy.automata import EpsilonNFA, Epsilon
 from regex import RegexVisitor, Alternation, KleeneStar, Regex, Letter, Concatenation
 
 
@@ -34,6 +34,7 @@ class RegexConverter(RegexVisitor):
         nfa.ts.initial_states = set([q_init])
         nfa.ts.final_states = set([q_final])
         nfa.add_transition(q_final, Epsilon(), q_init)
+        nfa.add_transition(q_init, Epsilon(), q_final)
         return nfa
 
     def visit_alternation(self, regex: Alternation) -> EpsilonNFA:
